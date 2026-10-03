@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Portal</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 600px;
+            margin: 80px auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Student Feedback Portal</h1>
+
+<p>Enter your name:</p>
+
+<input type="text" id="name" placeholder="Your name">
+
+<button onclick="submitName()">Submit</button>
+
+<div id="result"></div>
+
+<script>
+function submitName() {
+    let name = document.getElementById("name").value;
+
+    // INTENTIONALLY VULNERABLE CODE
+    document.getElementById("result").textContent =
+        "Welcome, " + name + "!";
+}
+</script>
+
+</body>
+</html>
